@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Daily Schedule Simulation</title>
+</head>
+<body style="font-family: sans-serif; text-align: center; padding-top: 60px; background-color: #eef;">
+
+  <h1>My Simulated Day</h1>
+  <div id="output" style="margin-top: 40px; font-size: 1.5rem;"></div>
+
+  <script>
+    const output = document.getElementById("output");
+
+    // Define the list of activities
+    function scheduleActivity(activity, delay) {
+      setTimeout(() => {
+        output.innerHTML += `<p>${activity}</p>`;
+      }, delay);
+    }
+
+    // Your day begins
+    scheduleActivity("⏰ Wake up and stretch", 1000);
+    scheduleActivity("🥣 Eat breakfast", 3000);
+    scheduleActivity("💻 Start coding session", 5000);
+    scheduleActivity("☕ Take a short coffee break", 8000);
+    scheduleActivity("📞 Attend a team meeting", 11000);
+    scheduleActivity("🕹️ Play a short game", 14000);
+
+    // Twist with random timing and emoji
+    const randomDelay = Math.floor(Math.random() * 4000) + 15000;
+    const moods = ["😄", "😐", "😴", "🤪"];
+    const mood = moods[Math.floor(Math.random() * moods.length)];
+    scheduleActivity(`${mood} Unexpected moment!`, randomDelay);
+  </script>
+
+</body>
+</html>
